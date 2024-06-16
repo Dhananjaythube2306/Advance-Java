@@ -1,0 +1,22 @@
+Basic step JDBC :-
+Step 1:-
+Class.forName("Com.mysql.jdbc.Driver");
+// to load the Driver class to establish database connection
+
+Step 2:-
+Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/database","Username","password");
+// attempts to establish a connection to the database by using the given database URL
+
+Step 3:- Create the Statement object
+Statement stm = con.createStatement();
+// the object statement is responsible to execute Queries with the database
+
+Step 4:- execute the Query 
+Result rs = stm.executeQuery("Select * from table_name");
+// the executeQuery() method of statement interface is used execute query to the database.
+/* When it comes to extracting data, then executeQuery method will be used. And when it comes 
+to making any kind of modification i.e. insert, update, delete, then executeUpdate method will be used.*/
+
+Step 5:- close the connection object 
+// By closing connection object statement and ResultSet will be close automatically
+
